@@ -1,0 +1,284 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 82rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    background-color: #435d7d;
+    color: #fff;
+    text-align: center;
+    font-size: 2.4rem;
+    padding: 1.8rem;
+    border-radius: 8px 8px 0 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center; /* Centraliza as colunas no modal */
+    align-items: flex-start; /* Alinha ao topo */
+    gap: 3rem; /* Espaço entre as colunas */
+    padding: 2rem;
+}
+
+.form-columns {
+    display: flex;
+    justify-content: space-evenly; /* Distribui o espaço igualmente entre as colunas */
+    align-items: flex-start; /* Alinha ao topo */
+    gap: 3rem;
+    width: 100%;
+}
+
+.form-section {
+    flex: 1; /* Garante que as seções tenham tamanhos iguais */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-section h3{
+    color: #333;
+}
+
+.form-divider {
+    width: 1px;
+    background-color: #ddd;
+    margin: 0 1rem;
+    height: auto;
+    align-self: stretch; /* Faz o divisor ocupar toda a altura */
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Garante que os campos ocupem o mesmo espaço */
+    position: relative; /* Necessário para mensagens de erro */
+}
+
+.form-group-inline {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start; /* Garante que os campos fiquem alinhados no topo */
+}
+
+.form-group-inline input {
+    flex: 1;
+}
+
+.form-label {
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+}
+
+.form-input {
+    padding: 1rem;
+    font-size: 1.4rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: white; /* Garantir fundo branco por padrão */
+}
+
+.form-input:focus {
+    border-color: #435d7d;
+    outline: none;
+    box-shadow: 0 0 6px rgba(45, 77, 139, 0.5);
+}
+
+/* Remove a cor do preenchimento automático */
+.form-input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset !important; /* Substitui a cor de fundo automática */
+    -webkit-text-fill-color: #555 !important; /* Define a cor do texto */
+}
+
+.form-input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 6px rgba(45, 77, 139, 0.5), 0 0 0 30px white inset !important; /* Mantém o estilo de foco */
+    -webkit-text-fill-color: #555 !important; /* Garante que a cor do texto não mude no foco */
+}
+
+
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.cancel-button,
+.submit-button {
+    padding: 1.2rem 3rem;
+    font-size: 1.4rem;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+}
+
+.cancel-button {
+   
+    color: #737373;
+}
+
+.cancel-button:hover {
+    color: #504c4c;
+   
+}
+
+.submit-button {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.submit-button:hover {
+    background-color: #388e3c;
+    
+}
+
+/* Campos de endereço posicionados */
+.endereco-section {
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    padding: 2rem;
+}
+
+.endereco-section .form-group-inline {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.endereco-section .form-group-inline input {
+    flex: 1;
+}
+
+.input-error {
+    border: 1px solid red; /* Borda vermelha para campos com erro */
+  }
+  
+  .input-error::placeholder {
+    color: red; /* Mensagem de erro em vermelho */
+    opacity: 1; /* Garante que a mensagem seja visível */
+  }
+  
+  .error-message {
+    position: absolute;
+  bottom: -18px; /* Posiciona a mensagem logo abaixo do campo */
+  left: 0;
+  font-size: 0.9rem;
+  color: red;
+  margin-top: 0.2rem;
+  }
+
+  
+/* Responsividade */
+@media (max-width: 768px) {
+    .modal-box {
+        width: 90%;
+    }
+
+    .modal-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .form-columns {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .form-group-inline {
+        flex-direction: column;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cancel-button,
+    .submit-button {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .modal-box {
+      width: 24%; /* Reduz o tamanho do modal */
+      border-radius: 8px;
+      padding: 1rem; /* Reduz espaçamento interno */
+      display: flex;
+      align-items: center;
+      margin-top: -110rem;
+    }
+  
+    .modal-header {
+      font-size: 1.8rem; /* Reduz o tamanho do texto */
+      padding: 1rem; /* Reduz espaçamento */
+    }
+  
+    .modal-content {
+      flex-direction: column; /* Alinha as colunas verticalmente */
+      gap: 1.5rem;
+      padding: 1.2rem; /* Reduz espaçamento */
+    }
+  
+    .form-columns {
+      flex-direction: column; /* Deixa os campos em uma única coluna */
+      gap: 1.5rem;
+    }
+  
+    .form-label {
+      font-size: 1.2rem; /* Reduz o tamanho do texto */
+    }
+  
+    .form-input {
+      font-size: 1.2rem; /* Reduz o tamanho dos inputs */
+      padding: 0.8rem; /* Reduz espaçamento interno */
+    }
+  
+    .modal-buttons {
+      flex-direction: column; /* Empilha os botões */
+      gap: 1rem; /* Reduz espaço entre botões */
+    }
+  
+    .cancel-button,
+    .submit-button {
+      width: 100%; /* Botões ocupam toda a largura */
+      padding: 1rem; /* Reduz espaçamento */
+      font-size: 1.2rem; /* Reduz o tamanho do texto */
+    }
+  
+    .form-divider {
+      display: none; /* Remove o divisor em telas pequenas */
+    }
+  }
