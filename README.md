@@ -41,7 +41,7 @@ Este projeto foi criado como parte de um desafio técnico para uma vaga de Desen
 
 1. Clone o repositório:
    ```bash
-   git clone <url-do-repositorio>
+   git clone https://github.com/luanlucolli/crud-empresas
    ```
 2. Instale as dependências do back-end:
    ```bash
